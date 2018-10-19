@@ -1,0 +1,41 @@
+@import '../../theme/index.less';
+@defaultHeight:144px;
+.push-inplay-bet-cell {
+  width: 710px;
+  height: @defaultHeight;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: @bet-groupp-bg-default-color;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-sizing: border-box;
+  .progress {
+    height: @defaultHeight;
+    width: 42%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 20px;
+    .text {
+      font-size: 28px;
+      color: @progress-text-color;
+    }
+    .stringInTime {
+      font-size: 32px;
+      color: @progress-string-in-time-color;
+      margin-left: 12px
+    }
+  }
+}
+
+.push-before-bet-cell {
+  &:extend(.push-inplay-bet-cell all);
+  width: 100%;
+  border-top: 1px solid @bet-border-color;
+  margin-bottom: 0;
+  height: 146px;
+  box-sizing: border-box;
+  border-radius: 0px;
+}

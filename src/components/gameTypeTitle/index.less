@@ -1,0 +1,24 @@
+@import '../../theme/index.less';
+.default-game-type-title {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 28px;
+  color:@aide-color-secondary;
+  background:@match-group-bg;
+  .items {
+    display: flex;
+    height: @tab-bar-height;
+    justify-content: flex-start;
+    align-items: center;
+    .activeTypeText {
+      color: @bet-sp-active-color ;
+    }
+    .img {
+      height: @iconHeight;
+      width: @iconWidth;
+      resize-mode: contain;
+      margin: 0 12px 0 20px;
+    }
+  }
+}

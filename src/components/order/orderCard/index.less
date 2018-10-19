@@ -1,0 +1,36 @@
+@import '../../../theme/index.less';
+
+.wrap{
+  margin: @h-m-20;
+  background: #fff;
+  border-radius: @base-border-radius;
+  font-size: @base-font-size;
+  color: @remark-font-color;
+  .label{
+    padding: @h-p-20;
+    border-bottom: 1px @bet-border-color solid;
+  }
+}
+.item{
+  padding: 0 @h-p-20;
+  height: @base-list-height;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  &.noPadding{
+    padding:0 !important;
+  }
+  &.large{
+    padding: 0 @h-p-20;
+    height: @base-list-height;
+  }
+  &.small{
+    padding:0;
+    height: auto;
+  }
+
+  .item_R{
+    color: @primary-font-color;
+    letter-spacing: 0.34px;
+  }
+}

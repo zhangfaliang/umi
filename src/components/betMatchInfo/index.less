@@ -1,0 +1,49 @@
+@import '../../theme/index.less';
+@wrapHeight: 144px;
+.wrap {
+  display: flex;
+  height: @wrapHeight;
+  flex-flow: nowrap column;
+  justify-content: space-between;
+  align-content: center;
+  flex: 1;
+  padding:12px  20px;
+  box-sizing: border-box;
+  font-family: Akrobat-Bold;
+
+  .nameOrScore {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    .name {
+      font-size: 28px;
+      color:@bet-sp-color;
+    }
+    .score {
+      font-size: 32px;
+      color: @progress-string-in-time-color;
+    }
+  }
+  .bottom {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    .live {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background:@live-text-bg;
+      border-radius: 12px;
+      height: 24px;
+      width: 64px;
+      margin-right: 12px;
+      font-size: 20px;
+      font-weight: 600;
+      color: @live-text-color;
+    }
+    .time {
+      font-size: 24px;
+      color: @progress-text-color;
+    }
+  }
+}

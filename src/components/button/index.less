@@ -1,0 +1,88 @@
+@import '../../theme/index.less';
+.check-all-button {
+  &:hover,
+  &:active,
+  &:visited,
+  &:link,
+  &:focus {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+    text-decoration: none;
+  }
+  height: 80px;
+  width: 710px;
+  background:@primary-secondary-color;
+  border-radius: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+  color: @primary-btn-color;
+  letter-spacing: 0.38px;
+  margin: 20px 0;
+  position: relative;
+  &.active {
+    background: @primary-active-color;
+  }
+  &.disabled {
+    color: @disabled-color;
+    background: @bet-disabled-bg !important;
+    pointer-events: none;
+    .maxStakeAll{
+      color: @disabled-color;
+    }
+  }
+  .maxStakeAll {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    font-size: 24px;
+    color: #214365;
+    text-align: center;
+  }
+}
+
+.all-in-button {
+  &:extend(.check-all-button all);
+  border-radius: 0;
+  color: @primary-font-color;
+  height: 100px;
+  width: 120px;
+  border-left: 1px solid @bet-border-color;
+  background: @bet-btn-bg-default-color;
+  margin: 0;
+  &.active {
+    background: @bet-btn-bg-default-color;
+    border-left: 1px solid #FFFFFF;
+  }
+  &:active {
+    background: @primary-secondary-color;
+  }
+}
+
+.max-stake-button {
+  &:extend(.all-in-button all);
+  font-size: 28px;
+  width: 164px;
+  padding-top: 18px;
+  margin: 0 0;
+  box-sizing: border-box;
+  flex-flow: nowrap column;
+  justify-content: flex-start;
+}
+
+.bet-button {
+  &:extend(.all-in-button all);
+  background: @primary-secondary-color;
+  color: #FFFFFF;
+  width: 220px;
+  margin: 0 0;
+  &.active {
+    background: @primary-secondary-color; //border-left: 1px solid #FFFFFF;
+  }
+  &:active {
+    background: #0084DB;
+  }
+}

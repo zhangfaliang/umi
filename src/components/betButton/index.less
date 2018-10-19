@@ -1,0 +1,183 @@
+@import '../../theme/index.less';
+@defaultWidth: 120px;
+@defaultHeight: 144px;
+@detailMediumWidth: 354px;
+@detailDefaultHeight: 80px;
+@detailSmallWidth: 236px;
+@detailLargeWidth: 709px;
+@pushSmallWidth: 192px;
+@pushLargeWidth: 289px;
+@changSPWidth: 21px;
+@changSPHeight: 21px;
+.default_chang_sp {
+  width: @changSPWidth;
+  height: @changSPHeight;
+  position: absolute;
+  right: 10px;
+  opacity: 0;
+  box-sizing: border-box;
+}
+
+@-webkit-keyframes flicker {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.default-bet-button {
+  height: @defaultHeight;
+  width: @defaultWidth;
+  background-color: @bet-btn-bg-default-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column nowrap;
+  position: relative;
+  font-family: Akrobat-Bold;
+  border-left: 1px solid @bet-border-color;
+  user-select: none;
+  box-sizing: border-box;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+  }
+  
+  &.disabled {
+    background-color: @disabled-bet-bg-color;
+    .wrapOptionName{
+      span{
+        color:@disabled-bet-color;
+      }
+    }
+  }
+  .none {
+    display: none
+  }
+  .up:extend(.default_chang_sp) {
+    top: 25px;
+    >span:before {
+      font-size: 20px;
+      color: @up-sp-color;
+    }
+  }
+  .down:extend(.default_chang_sp) {
+    bottom: 25px;
+    >span:before {
+      color: @down-sp-color;
+      font-size: 20px;
+    }
+  }
+  .wrapOptionName {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    span {
+      font-size: 28px;
+      color: @bet-option-name-color;
+    }
+  }
+  .wrapSp {
+    .sp {
+      font-size: 32px;
+      color: @bet-sp-color;
+    }
+  }
+  .lock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 44px;
+    width: 44px;
+    >span:before {
+      color: @disabled-bet-color;
+    }
+  }
+  .flickerSp {
+    animation: flicker 5s ease-out forwards;
+  }
+}
+
+.detail-medium-bet-button {
+  &:extend(.default-bet-button all);
+  height: @detailDefaultHeight;
+  width: @detailMediumWidth;
+  background-color: @bet-btn-bg-default-color;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: row nowrap;
+  position: relative;
+  border-top: 1px solid @bet-border-color;
+  padding: 0 40px;
+}
+
+.detail-small-bet-button {
+  &:extend(.detail-medium-bet-button all);
+  width: @detailSmallWidth;
+}
+
+.detail-large-bet-button {
+  &:extend(.detail-medium-bet-button all);
+  width: @detailLargeWidth;
+}
+
+.push-large-bet-button {
+  &:extend(.detail-medium-bet-button all);
+  width: @pushLargeWidth;
+}
+
+.push-small-bet-button {
+  &:extend(.detail-medium-bet-button all);
+  width: @pushSmallWidth;
+}
+
+.active {
+  background-color: @bet-btn-active-bg-default-color;
+  .wrapSp {
+    .sp {
+      color: @bet-sp-active-color ;
+    }
+  }
+  .wrapOptionName {
+    span {
+      color: @bet-option-name-active-color;
+    }
+  }
+}
+
+// &:extend(.inline);

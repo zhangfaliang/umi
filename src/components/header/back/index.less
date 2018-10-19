@@ -1,0 +1,71 @@
+@import '../../../theme/index.less';
+
+.wrap {
+  height: @nav-bar-height;
+  width: 100%;
+  background: @primary-color;
+  color: @secondary-font-color;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+
+  .main {
+    overflow: hidden;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    margin: 0 @h-m-15;
+    .back{
+      position: relative;
+      display: flex;
+      padding-right: 6px;
+      margin-right: 6px;
+      img{
+        height: @nav-bar-back-height;
+        width: @nav-bar-back-height;
+        transform: rotate(180deg);
+      }
+      &::after{
+        content: '';
+        position: absolute;
+        height: 40px;
+        width: 1px;
+        background: @secondary-font-color;
+        top: 50%;
+        margin-top: -20px;
+        right: 0;
+      }
+    }
+
+    .right{
+      visibility: hidden;
+      position: relative;
+      display: flex;
+      padding-left: 6px;
+      margin-left: 6px;
+      img{
+        height: @nav-bar-back-height;
+        width: @nav-bar-back-height;
+      }
+      &::before{
+        content: '';
+        position: absolute;
+        height: 40px;
+        width: 1px;
+        background: @secondary-font-color;
+        top: 50%;
+        margin-top: -20px;
+        left: 0;
+      }
+    }
+    .content{
+      flex: 1;
+      text-align: center;
+      font-size: @primary-active-blod-font-size;
+      color: #FFFFFF;
+      letter-spacing: 0.38px;
+    }
+  }
+}

@@ -1,0 +1,161 @@
+@import '../../theme/index.less';
+@iconFontHeight:76px;
+.default-panel {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-flow: nowrap column;
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: @tab-bar-height;
+    width: 100%;
+    overflow: hidden;
+    border-bottom: 1px solid @tab-bar-border-color;
+    .text {
+      margin-left: 20px;
+      font-size: @base-font-size;
+      color: #FFFFFF;
+    }
+    .iconFont {
+      height: @iconFontHeight;
+      width: @iconWidth;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transform: rotate(90deg);
+      transform-origin: center;
+      transition:  rotate .3s ease-in;
+      >span:before {
+        color: @aide-color-secondary;
+      }
+    }
+  }
+  .children {
+    height: 0;
+    opacity: 0;
+    width: 100%;
+    overflow: hidden;
+    transition: overflow .5s ease-in .1s;
+  }
+  &.show {
+    .title {
+      border-bottom: none;
+      .iconFont {
+        transform-origin: center;
+        transform: rotate(-90deg);
+      }
+    }
+    .children {
+      height: auto;
+      opacity: 1;
+    }
+  }
+}
+
+.default-accordion {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-flow: nowrap column;
+  width: 100%;
+}
+
+.default-right-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: @iconFontHeight ;
+  width: @iconWidth;
+  margin-right: 36px;
+  >span:before {
+    color: @aide-color-secondary;
+  }
+}
+
+.default-detail-panel {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-flow: nowrap column;
+  background: #FFFFFF;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: @tab-bar-height;
+    width: 100%;
+    border-bottom: 1px solid @tab-bar-border-color;
+    .titleLife {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      background: #fff;
+      flex:1;
+      .leftIcon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height:@iconFontHeight;
+        width: @iconWidth;
+        margin-right: 10px;
+        >span:before {
+          color: @aide-color-secondary;
+        }
+      }
+      .leftText {
+        font-size: @base-font-size;
+        color: @remark-font-color;
+      }
+    }
+    .titleRight {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      background: #fff;
+      .foldIcon {
+        &:extend(.default-right-icon all);
+        transform: rotate(90deg);
+      }
+      .activeFoldIcon {
+        transform: rotate(-90deg);
+      }
+      .stickIcon {
+        &:extend(.default-right-icon all);
+        transform: rotate(-90deg);
+      }
+      .activeStickIcon {
+        >span:before {
+          color: @aide-color;
+        }
+      }
+    }
+  }
+  .children {
+    height: 0;
+    opacity: 0;
+    width: 100%;
+    overflow: hidden;
+    transition: .5s ease-in .1s;
+  }
+  &.show {
+    .title {
+      border-bottom: none;
+      .iconFont {
+        transform-origin: center;
+        transform: rotate(-90deg);
+      }
+    }
+    .children {
+      height: auto;
+      opacity: 1;
+    }
+  }
+}
